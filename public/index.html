@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nimbus</title>
+<meta name="theme-color" content="#1e1f26">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%237c5cff'/%3E%3Ccircle cx='12' cy='17' r='5' fill='white'/%3E%3Ccircle cx='19' cy='15' r='6' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bg"></div>
+
+<div id="auth">
+  <form id="authForm" autocomplete="on">
+    <div class="logo">☁</div>
+    <h1 id="authTitle">Welcome back!</h1>
+    <p class="muted" id="authSub">We're so excited to see you again.</p>
+    <label>USERNAME</label>
+    <input id="authName" name="username" autocomplete="username" maxlength="24" required>
+    <label>PASSWORD</label>
+    <input id="authPass" name="password" type="password" autocomplete="current-password" required>
+    <div id="authErr" class="err"></div>
+    <button class="btn primary wide" id="authBtn">Log In</button>
+    <p class="muted small">
+      <span id="authSwitchText">Need an account?</span> <a href="#" id="authSwitch">Register</a>
+    </p>
+  </form>
+</div>
+
+<div id="app" class="hidden">
+  <nav id="rail"></nav>
+  <aside id="side">
+    <div id="sideHead"></div>
+    <div id="sideList"></div>
+    <div id="voiceBar" class="hidden"></div>
+    <div id="userPanel"></div>
+  </aside>
+  <main id="main">
+    <header id="top"></header>
+    <div id="dock" class="hidden"></div>
+    <div id="chatwrap">
+      <div id="msgs"></div>
+      <div id="typing"></div>
+      <div id="composerWrap">
+        <div id="replyBar" class="hidden"></div>
+        <div id="composer">
+          <button class="icon" id="attachBtn" title="Upload a file">＋</button>
+          <textarea id="input" rows="1" placeholder="Message"></textarea>
+          <button class="icon" id="emojiBtn" title="Emoji">😀</button>
+          <button class="icon" id="sendBtn" title="Send">➤</button>
+          <input type="file" id="fileIn" class="hidden">
+        </div>
+      </div>
+    </div>
+    <div id="friendsView" class="hidden"></div>
+  </main>
+  <aside id="members"></aside>
+</div>
+
+<div id="overlay" class="hidden"></div>
+<div id="ctx" class="hidden"></div>
+<div id="picker" class="hidden"></div>
+<div id="toasts"></div>
+<div id="audioSink"></div>
+<script src="app.js"></script>
+</body>
+</html>
